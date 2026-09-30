@@ -1,598 +1,1343 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bayichilot - Delicious Food Delivered</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">
-                <span class="logo-icon">🍽️</span>
-                <span class="logo-text">Bayichilot</span>
-            </a>
-            
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#reviews">Reviews</a></li>
-                <li><a href="#contact">Contact</a></li>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f97316" />
+    <title>Bayichilot | Fresh Food Delivery</title>
+    <meta
+      name="description"
+      content="Order fresh pizza, burgers, pasta, salads, desserts, and drinks with Bayichilot. Premium food delivery with a fast, modern ordering experience."
+    />
+    <meta property="og:title" content="Bayichilot | Fresh Food Delivery" />
+    <meta
+      property="og:description"
+      content="Fresh food delivered your way. Discover Bayichilot for premium meals, delivery convenience, and a streamlined ordering experience."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Bayichilot | Fresh Food Delivery" />
+    <meta
+      name="twitter:description"
+      content="Fresh food delivered your way. Discover Bayichilot for premium meals, delivery convenience, and a streamlined ordering experience."
+    />
+    <link rel="canonical" href="https://bayichilot.vercel.app/" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23f97316'/%3E%3Ctext x='50%25' y='53%25' font-size='30' fill='white' text-anchor='middle' dominant-baseline='middle'%3EB%3C/text%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar" id="home">
+      <div class="container nav-shell">
+        <a class="brand" href="#home" aria-label="Bayichilot home">
+          <span class="brand-mark">B</span>
+          <span class="brand-name">Bayichilot</span>
+        </a>
+
+        <nav class="nav-main" aria-label="Main navigation" id="mainNav">
+          <a href="#home" class="nav-link active">Home</a>
+          <a href="#menu" class="nav-link">Menu</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#reviews" class="nav-link">Reviews</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+
+        <div class="nav-tools">
+          <button class="icon-button" id="themeToggle" type="button" aria-label="Toggle dark mode">
+            <span aria-hidden="true">☀</span>
+          </button>
+          <button class="icon-button" id="searchToggle" type="button" aria-label="Focus search">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 3a7.5 7.5 0 015.9 12.8l4.4 4.4 1.4-1.4-4.4-4.4A7.5 7.5 0 1110.5 3zm0 2a5.5 5.5 0 100 11 5.5 5.5 0 000-11z"/></svg>
+          </button>
+          <button class="icon-button cart-button" id="cartButton" type="button" aria-label="Open cart">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h2l2.4 10.2a1 1 0 001 .8h9.9a1 1 0 001-.8L18.7 6H5.2M9 18.5A1.5 1.5 0 1010.5 20 1.5 1.5 0 009 18.5zm8-1.5A1.5 1.5 0 1017.5 20 1.5 1.5 0 0017 17z"/></svg>
+            <span class="cart-badge" id="cartBadge">0</span>
+          </button>
+          <a class="btn btn-primary nav-order" href="#menu">Order now</a>
+          <button class="mobile-nav-toggle" id="mobileNavToggle" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#about">About</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+        <a href="#menu" class="mobile-order">Order now</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero section-shell">
+        <div class="container hero-grid">
+          <div class="hero-copy reveal-up">
+            <span class="eyebrow">Freshly made, delivered fast</span>
+            <h1>Your cravings, <span>delivered.</span></h1>
+            <p>Bayichilot brings together premium comfort food, flexible delivery, and a smooth ordering experience built for busy nights and everyday cravings.</p>
+
+            <div class="hero-actions">
+              <a href="#menu" class="btn btn-primary">Order now</a>
+              <a href="#menu" class="btn btn-secondary">Explore menu</a>
+            </div>
+
+            <ul class="trust-list" aria-label="Trust indicators">
+              <li>Fresh ingredients</li>
+              <li>Easy ordering</li>
+              <li>30–40 min delivery</li>
             </ul>
-            
-            <div class="nav-actions">
-                <button class="cart-btn" id="cartBtn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-                    <span class="cart-count" id="cartCount">0</span>
-                </button>
-                <button class="mobile-menu-btn" id="mobileMenuBtn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-                </button>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-bg"></div>
-        <div class="hero-content">
-            <div class="hero-text">
-                <span class="hero-badge">🚀 Fast Delivery</span>
-                <h1>Delicious Food<br>Delivered To Your <span class="highlight">Doorstep</span></h1>
-                <p>Experience the finest flavors from Bayichilot. Fresh ingredients, expert chefs, and lightning-fast delivery.</p>
-                <div class="hero-buttons">
-                    <a href="#menu" class="btn btn-primary">Order Now</a>
-                    <a href="#menu" class="btn btn-secondary">View Menu</a>
-                </div>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-number">15K+</span>
-                        <span class="stat-label">Happy Customers</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">500+</span>
-                        <span class="stat-label">Dishes Served</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">4.9</span>
-                        <span class="stat-label">Rating</span>
-                    </div>
-                </div>
+            <div class="hero-metrics" aria-label="Bayichilot metrics">
+              <div>
+                <strong>4.8/5</strong>
+                <span>Average rating</span>
+              </div>
+              <div>
+                <strong>16 min</strong>
+                <span>Average prep</span>
+              </div>
+              <div>
+                <strong>Free over $30</strong>
+                <span>On qualifying orders</span>
+              </div>
             </div>
-            <div class="hero-image">
-                <div class="floating-card card-1">
-                    <span class="emoji">🍕</span>
-                    <div>
-                        <p class="card-title">Pizza Margherita</p>
-                        <p class="card-price">$12.99</p>
-                    </div>
-                </div>
-                <div class="floating-card card-2">
-                    <span class="emoji">⚡</span>
-                    <div>
-                        <p class="card-title">Fast Delivery</p>
-                        <p class="card-time">25-30 min</p>
-                    </div>
-                </div>
-                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=600&fit=crop" alt="Delicious Food" class="hero-img">
-            </div>
-        </div>
-    </section>
+          </div>
 
-    <!-- Features -->
-    <section class="features">
+          <div class="hero-media reveal-up delay-1">
+            <div class="hero-visual">
+              <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=80" alt="Fresh, colorful food spread" />
+            </div>
+
+            <div class="floating-card top-card">
+              <span class="floating-icon">🍕</span>
+              <div>
+                <strong>Classic Margherita</strong>
+                <span>$18.50</span>
+              </div>
+            </div>
+
+            <div class="floating-card side-card">
+              <span class="floating-icon">⚡</span>
+              <div>
+                <strong>Fast delivery</strong>
+                <span>30–40 min</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="features section-shell muted-shell" aria-label="Platform features">
         <div class="container">
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🚚</div>
-                    <h3>Fast Delivery</h3>
-                    <p>Get your food delivered in 30 minutes or less, guaranteed hot and fresh.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🥗</div>
-                    <h3>Fresh Ingredients</h3>
-                    <p>We source only the freshest, highest-quality ingredients for every dish.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">👨‍🍳</div>
-                    <h3>Expert Chefs</h3>
-                    <p>Our world-class chefs bring years of culinary excellence to your plate.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💰</div>
-                    <h3>Best Prices</h3>
-                    <p>Enjoy premium quality food at affordable prices with regular deals.</p>
-                </div>
-            </div>
+          <div class="feature-grid">
+            <article class="feature-card reveal-up">
+              <div class="feature-icon">🚚</div>
+              <h3>Fast delivery</h3>
+              <p>Hot, reliable arrival windows without the wait.</p>
+            </article>
+            <article class="feature-card reveal-up">
+              <div class="feature-icon">🥗</div>
+              <h3>Fresh ingredients</h3>
+              <p>Thoughtful menus built around quality and flavor.</p>
+            </article>
+            <article class="feature-card reveal-up">
+              <div class="feature-icon">👩‍🍳</div>
+              <h3>Curated picks</h3>
+              <p>Popular dishes selected for comfort, speed, and consistency.</p>
+            </article>
+            <article class="feature-card reveal-up">
+              <div class="feature-icon">💳</div>
+              <h3>Easy checkout</h3>
+              <p>Responsive ordering flow ready for a payment provider.</p>
+            </article>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- Menu Section -->
-    <section class="menu" id="menu">
+      <section class="menu-section section-shell" id="menu">
         <div class="container">
-            <div class="section-header">
-                <span class="section-badge">Our Menu</span>
-                <h2>Popular Dishes</h2>
-                <p>Discover our most loved dishes, crafted with passion and served with love.</p>
-            </div>
-            
-            <div class="menu-filters">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="pizza">Pizza</button>
-                <button class="filter-btn" data-filter="burger">Burgers</button>
-                <button class="filter-btn" data-filter="pasta">Pasta</button>
-                <button class="filter-btn" data-filter="salad">Salads</button>
-                <button class="filter-btn" data-filter="dessert">Desserts</button>
-            </div>
-            
-            <div class="menu-grid" id="menuGrid">
-                <!-- Menu items will be inserted by JavaScript -->
-            </div>
-        </div>
-    </section>
+          <div class="section-header reveal-up">
+            <span class="eyebrow">Order favorites</span>
+            <h2>Choose what sounds good tonight.</h2>
+            <p>Explore our selections by category, search by ingredient, and build a dinner that fits your mood.</p>
+          </div>
 
-    <!-- About Section -->
-    <section class="about" id="about">
+          <div class="menu-toolbar reveal-up">
+            <div class="search-wrap">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 3a7.5 7.5 0 015.9 12.8l4.4 4.4 1.4-1.4-4.4-4.4A7.5 7.5 0 1110.5 3zm0 2a5.5 5.5 0 100 11 5.5 5.5 0 000-11z"/></svg>
+              <input id="menuSearch" type="search" aria-label="Search menu items" placeholder="Search dishes, ingredients, or categories" />
+              <button id="searchClear" class="clear-button hidden" type="button">Clear</button>
+            </div>
+
+            <label class="sort-control" for="sortSelect">
+              <span>Sort</span>
+              <select id="sortSelect" aria-label="Sort menu items">
+                <option value="featured">Featured</option>
+                <option value="rating">Top rated</option>
+                <option value="price-low">Price: low to high</option>
+                <option value="price-high">Price: high to low</option>
+                <option value="prep">Prep time</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="category-row reveal-up" id="categoryTabs" aria-label="Food categories">
+            <button type="button" class="filter-button active" data-category="all">All</button>
+            <button type="button" class="filter-button" data-category="pizza">Pizza</button>
+            <button type="button" class="filter-button" data-category="burgers">Burgers</button>
+            <button type="button" class="filter-button" data-category="pasta">Pasta</button>
+            <button type="button" class="filter-button" data-category="salads">Salads</button>
+            <button type="button" class="filter-button" data-category="desserts">Desserts</button>
+            <button type="button" class="filter-button" data-category="drinks">Drinks</button>
+            <button type="button" class="filter-button" data-category="popular">Popular</button>
+          </div>
+
+          <div class="search-suggestions" id="searchSuggestions" aria-live="polite"></div>
+          <div id="menuGrid" class="menu-grid" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="promo section-shell" id="offers">
         <div class="container">
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=500&h=600&fit=crop" alt="Our Kitchen">
-                    <div class="experience-badge">
-                        <span class="exp-number">10+</span>
-                        <span class="exp-text">Years of<br>Excellence</span>
-                    </div>
-                </div>
-                <div class="about-text">
-                    <span class="section-badge">About Us</span>
-                    <h2>We Make The Best Food In Town</h2>
-                    <p>Founded in 2014, Bayichilot has been serving the community with passion and dedication. Our journey began with a simple mission: to bring delicious, high-quality food to every doorstep.</p>
-                    <p>Today, we're proud to be the favorite food delivery service for thousands of families, known for our commitment to freshness, flavor, and exceptional service.</p>
-                    <div class="about-features">
-                        <div class="about-feature">
-                            <span class="check">✓</span>
-                            <span>Quality Ingredients</span>
-                        </div>
-                        <div class="about-feature">
-                            <span class="check">✓</span>
-                            <span>Expert Chefs</span>
-                        </div>
-                        <div class="about-feature">
-                            <span class="check">✓</span>
-                            <span>Fast Delivery</span>
-                        </div>
-                        <div class="about-feature">
-                            <span class="check">✓</span>
-                            <span>24/7 Support</span>
-                        </div>
-                    </div>
-                    <a href="#menu" class="btn btn-primary">Explore Menu</a>
-                </div>
+          <div class="promo-card reveal-up">
+            <div>
+              <span class="eyebrow light">New customer offer</span>
+              <h2>Spend $30, save 10% on your first order.</h2>
+              <p>Use code <strong>BAYI10</strong> at checkout. This is a demo promo for the storefront experience.</p>
             </div>
-        </div>
-    </section>
 
-    <!-- Reviews Section -->
-    <section class="reviews" id="reviews">
+            <div class="promo-actions">
+              <button class="btn btn-light" id="copyPromoCode" type="button">Copy code</button>
+              <a href="#menu" class="btn btn-secondary btn-contrast">Browse menu</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="about section-shell" id="about">
+        <div class="container about-grid">
+          <div class="about-media reveal-up">
+            <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=900&q=80" alt="Chef preparing a fresh meal" />
+          </div>
+
+          <div class="about-copy reveal-up">
+            <span class="eyebrow">About Bayichilot</span>
+            <h2>Built for real life, not just delivery day dreams.</h2>
+            <p>Bayichilot is designed around the idea that ordering food should feel simple, reassuring, and genuinely enjoyable. We focus on flavor, convenience, and a polished experience from the first click to the final bite.</p>
+            <p>Instead of relying on inflated claims, Bayichilot centers the experience on what matters most: familiar favorites, confident quality, transparent pricing, and delivery that keeps up with everyday routines.</p>
+
+            <ul class="value-list">
+              <li>Thoughtful menu curation</li>
+              <li>Reliable convenience</li>
+              <li>Simple, honest UX</li>
+              <li>Fresh, crowd-pleasing flavors</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="delivery section-shell muted-shell">
         <div class="container">
-            <div class="section-header">
-                <span class="section-badge">Testimonials</span>
-                <h2>What Our Customers Say</h2>
-                <p>Real reviews from real food lovers who trust Bayichilot for their meals.</p>
-            </div>
-            
-            <div class="reviews-grid">
-                <div class="review-card">
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"The best pizza I've ever had! Fast delivery and the food was still hot. Bayichilot is now my go-to for weekend dinners."</p>
-                    <div class="reviewer">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" alt="Sarah" class="reviewer-img">
-                        <div class="reviewer-info">
-                            <h4>Sarah Johnson</h4>
-                            <p>Food Blogger</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="review-card">
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"Amazing quality and taste! The burgers are juicy and perfectly seasoned. Customer service is top-notch too!"</p>
-                    <div class="reviewer">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Michael" class="reviewer-img">
-                        <div class="reviewer-info">
-                            <h4>Michael Chen</h4>
-                            <p>Regular Customer</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="review-card">
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"I order from Bayichilot at least twice a week. The pasta is incredible and they always get my custom orders right!"</p>
-                    <div class="reviewer">
-                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop" alt="Emma" class="reviewer-img">
-                        <div class="reviewer-info">
-                            <h4>Emma Williams</h4>
-                            <p>Working Professional</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+          <div class="section-header reveal-up">
+            <span class="eyebrow">Delivery information</span>
+            <h2>Easy ordering, clear expectations.</h2>
+          </div>
 
-    <!-- CTA Section -->
-    <section class="cta">
+          <div class="delivery-grid reveal-up">
+            <div class="info-card">
+              <span class="info-label">Estimated delivery</span>
+              <strong>30–40 min</strong>
+            </div>
+            <div class="info-card">
+              <span class="info-label">Delivery fee</span>
+              <strong>$3.99</strong>
+            </div>
+            <div class="info-card">
+              <span class="info-label">Minimum order</span>
+              <strong>$15.00</strong>
+            </div>
+            <div class="info-card">
+              <span class="info-label">Service area</span>
+              <strong>[City], [Neighborhoods]</strong>
+            </div>
+            <div class="info-card">
+              <span class="info-label">Hours</span>
+              <strong>Mon–Sun • 11:00 AM–11:00 PM</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="reviews section-shell" id="reviews">
         <div class="container">
-            <div class="cta-content">
-                <h2>Get 50% Off Your First Order!</h2>
-                <p>Use code <strong>BAYI50</strong> at checkout and enjoy half price on your first delicious meal from Bayichilot.</p>
-                <a href="#menu" class="btn btn-white">Order Now</a>
-            </div>
-        </div>
-    </section>
+          <div class="section-header reveal-up">
+            <span class="eyebrow">Customer feedback</span>
+            <h2>Sample reviews, designed to feel authentic and easy to swap later.</h2>
+            <p>These testimonials are clearly structured as demo content and can be replaced with verified reviews when available.</p>
+          </div>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="contact-content">
-                <div class="contact-info">
-                    <span class="section-badge">Contact Us</span>
-                    <h2>Get In Touch</h2>
-                    <p>Have questions or feedback? We'd love to hear from you!</p>
-                    
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <span class="contact-icon">📍</span>
-                            <div>
-                                <h4>Address</h4>
-                                <p>123 Food Street, Culinary District<br>New York, NY 10001</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-icon">📞</span>
-                            <div>
-                                <h4>Phone</h4>
-                                <p>+1 (555) 123-4567</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-icon">✉️</span>
-                            <div>
-                                <h4>Email</h4>
-                                <p>hello@bayichilot.com</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-icon">🕐</span>
-                            <div>
-                                <h4>Hours</h4>
-                                <p>Mon-Sun: 10AM - 11PM</p>
-                            </div>
-                        </div>
-                    </div>
+          <div class="review-meta reveal-up">
+            <div class="rating-pill">★★★★★ <span>4.8 average</span></div>
+            <div class="review-count">Demo rating snapshot • 250+ orders</div>
+          </div>
+
+          <div class="review-grid reveal-up">
+            <article class="review-card">
+              <div class="stars">★★★★★</div>
+              <p>“The ordering flow felt effortless, and the food arrived warm and fresh. The burger was exactly what I wanted after a long day.”</p>
+              <div class="reviewer">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80" alt="Sample customer portrait" />
+                <div>
+                  <strong>Demo customer</strong>
+                  <span>Verified demo review</span>
                 </div>
-                
-                <form class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="tel" placeholder="Your Phone">
-                    </div>
-                    <div class="form-group">
-                        <textarea placeholder="Your Message" rows="4" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-full">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
+              </div>
+            </article>
 
-    <!-- Footer -->
+            <article class="review-card">
+              <div class="stars">★★★★★</div>
+              <p>“Fast, simple, and no weird surprises. The pizza was crisp, the sauce balanced, and the checkout felt clean on mobile.”</p>
+              <div class="reviewer">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" alt="Sample customer portrait" />
+                <div>
+                  <strong>Demo customer</strong>
+                  <span>Verified demo review</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="review-card">
+              <div class="stars">★★★★★</div>
+              <p>“The menu felt thoughtful, and the order tracking gave me confidence. The dessert was the perfect finish.”</p>
+              <div class="reviewer">
+                <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=200&q=80" alt="Sample customer portrait" />
+                <div>
+                  <strong>Demo customer</strong>
+                  <span>Verified demo review</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact section-shell" id="contact">
+        <div class="container contact-grid">
+          <div class="contact-copy reveal-up">
+            <span class="eyebrow">Contact</span>
+            <h2>Need help or want to talk about a custom order?</h2>
+            <p>Use the contact form for general questions, feedback, or support. Business details are configured as placeholders so they can be replaced when real operating information is available.</p>
+
+            <div class="contact-detail-list">
+              <div>
+                <span class="detail-label">Address</span>
+                <strong>[Your restaurant address]</strong>
+              </div>
+              <div>
+                <span class="detail-label">Phone</span>
+                <strong>[+1 (000) 000-0000]</strong>
+              </div>
+              <div>
+                <span class="detail-label">Email</span>
+                <strong>[hello@yourbrand.com]</strong>
+              </div>
+              <div>
+                <span class="detail-label">Hours</span>
+                <strong>Mon–Sun • 11:00 AM–11:00 PM</strong>
+              </div>
+            </div>
+          </div>
+
+          <form class="contact-form reveal-up" id="contactForm" novalidate>
+            <div class="field-row">
+              <label>
+                <span>Name</span>
+                <input type="text" name="name" id="contactName" required />
+              </label>
+            </div>
+            <div class="field-row two-col">
+              <label>
+                <span>Email</span>
+                <input type="email" name="email" id="contactEmail" required />
+              </label>
+              <label>
+                <span>Phone</span>
+                <input type="tel" name="phone" id="contactPhone" />
+              </label>
+            </div>
+            <div class="field-row">
+              <label>
+                <span>Message</span>
+                <textarea name="message" id="contactMessage" rows="5" required></textarea>
+              </label>
+            </div>
+            <button class="btn btn-primary btn-full" type="submit">Send message</button>
+            <p class="form-status" id="contactStatus" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <a href="#" class="logo">
-                        <span class="logo-icon">🍽️</span>
-                        <span class="logo-text">Bayichilot</span>
-                    </a>
-                    <p>Bringing delicious food to your doorstep since 2014. Quality, taste, and service you can trust.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link">📘</a>
-                        <a href="#" class="social-link">📸</a>
-                        <a href="#" class="social-link">🐦</a>
-                        <a href="#" class="social-link">▶️</a>
-                    </div>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#menu">Menu</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#reviews">Reviews</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>Menu Categories</h4>
-                    <ul>
-                        <li><a href="#menu">Pizza</a></li>
-                        <li><a href="#menu">Burgers</a></li>
-                        <li><a href="#menu">Pasta</a></li>
-                        <li><a href="#menu">Salads</a></li>
-                        <li><a href="#menu">Desserts</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>Support</h4>
-                    <ul>
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Refund Policy</a></li>
-                        <li><a href="#">FAQ</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2024 Bayichilot. All rights reserved.</p>
-            </div>
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a class="brand footer-logo" href="#home">
+            <span class="brand-mark">B</span>
+            <span class="brand-name">Bayichilot</span>
+          </a>
+          <p>Fresh flavors, quick delivery, and a better way to order dinner on the move.</p>
+          <div class="social-links" aria-label="Social media links">
+            <a href="#" aria-label="Instagram">◎</a>
+            <a href="#" aria-label="Facebook">◌</a>
+            <a href="#" aria-label="X">X</a>
+            <a href="#" aria-label="YouTube">▶</a>
+          </div>
         </div>
+
+        <div>
+          <h3>Company</h3>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Explore</h3>
+          <ul>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#offers">Popular</a></li>
+            <li><a href="#offers">Offers</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Support</h3>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Help center</a></li>
+            <li><a href="#">Delivery</a></li>
+            <li><a href="#">Refund policy</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Cookies</a></li>
+          </ul>
+        </div>
+
+        <div class="newsletter">
+          <h3>Newsletter</h3>
+          <form id="newsletterForm" novalidate>
+            <label class="sr-only" for="newsletterEmail">Email</label>
+            <input id="newsletterEmail" type="email" placeholder="Email address" />
+            <button class="btn btn-primary btn-small" type="submit">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>© 2025 Bayichilot. All rights reserved.</p>
+      </div>
     </footer>
 
-    <!-- Cart Sidebar -->
-    <div class="cart-overlay" id="cartOverlay"></div>
-    <div class="cart-sidebar" id="cartSidebar">
-        <div class="cart-header">
-            <h3>Your Cart</h3>
-            <button class="cart-close" id="cartClose">✕</button>
+    <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart" aria-hidden="true">
+      <div class="drawer-header">
+        <div>
+          <span class="eyebrow">Your cart</span>
+          <h3>Ready to eat?</h3>
         </div>
-        <div class="cart-items" id="cartItems">
-            <div class="cart-empty">
-                <span class="empty-icon">🛒</span>
-                <p>Your cart is empty</p>
-                <a href="#menu" class="btn btn-primary" onclick="closeCart()">Browse Menu</a>
-            </div>
+        <button class="close-button" id="cartClose" type="button" aria-label="Close cart">×</button>
+      </div>
+
+      <div class="drawer-content">
+        <div id="cartItems" class="cart-items"></div>
+      </div>
+
+      <div class="drawer-footer">
+        <div class="promo-entry">
+          <label for="promoInput">Promo code</label>
+          <div class="promo-inline">
+            <input id="promoInput" type="text" placeholder="BAYI10" />
+            <button type="button" id="applyPromo" class="mini-button">Apply</button>
+          </div>
         </div>
-        <div class="cart-footer" id="cartFooter" style="display: none;">
-            <div class="cart-total">
-                <span>Total:</span>
-                <span class="total-price" id="cartTotal">$0.00</span>
-            </div>
-            <button class="btn btn-primary btn-full" onclick="checkout()">Checkout</button>
+
+        <div class="totals">
+          <div><span>Subtotal</span><strong id="subtotalValue">$0.00</strong></div>
+          <div><span>Delivery</span><strong id="deliveryValue">$0.00</strong></div>
+          <div><span>Tax</span><strong id="taxValue">$0.00</strong></div>
+          <div><span>Discount</span><strong id="discountValue">-$0.00</strong></div>
+          <div class="total-row"><span>Total</span><strong id="totalValue">$0.00</strong></div>
         </div>
+
+        <button type="button" id="checkoutButton" class="btn btn-primary btn-full">Checkout</button>
+        <button type="button" id="clearCart" class="btn btn-secondary btn-full">Clear cart</button>
+      </div>
+    </aside>
+
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+
+    <div class="modal-backdrop hidden" id="foodModal" aria-hidden="true">
+      <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="productModalTitle">
+        <button class="close-button modal-close" id="modalClose" type="button" aria-label="Close product details">×</button>
+        <div class="modal-content" id="modalContent"></div>
+      </div>
     </div>
 
-    <!-- Toast Notification -->
-    <div class="toast" id="toast"></div>
+    <div class="checkout-backdrop hidden" id="checkoutModal" aria-hidden="true">
+      <div class="checkout-sheet" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+        <div class="checkout-header">
+          <div>
+            <span class="eyebrow">Checkout</span>
+            <h3 id="checkoutTitle">Complete your order</h3>
+          </div>
+          <button class="close-button" id="checkoutClose" type="button" aria-label="Close checkout">×</button>
+        </div>
 
-    <!-- JavaScript -->
+        <div class="stepper" aria-label="Checkout steps">
+          <span class="step active">1</span>
+          <span class="step">2</span>
+          <span class="step">3</span>
+          <span class="step">4</span>
+        </div>
+
+        <form id="checkoutForm" novalidate>
+          <div class="checkout-panel active" data-step="0">
+            <h4>Customer info</h4>
+            <div class="field-row two-col">
+              <label>
+                <span>Full name</span>
+                <input type="text" name="customerName" id="customerName" required />
+              </label>
+              <label>
+                <span>Email</span>
+                <input type="email" name="customerEmail" id="customerEmail" required />
+              </label>
+            </div>
+            <div class="field-row">
+              <label>
+                <span>Phone</span>
+                <input type="tel" name="customerPhone" id="customerPhone" required />
+              </label>
+            </div>
+          </div>
+
+          <div class="checkout-panel" data-step="1">
+            <h4>Delivery info</h4>
+            <div class="field-row">
+              <label>
+                <span>Address</span>
+                <input type="text" name="deliveryAddress" id="deliveryAddress" required />
+              </label>
+            </div>
+            <div class="field-row two-col">
+              <label>
+                <span>City</span>
+                <input type="text" name="deliveryCity" id="deliveryCity" required />
+              </label>
+              <label>
+                <span>Postal code</span>
+                <input type="text" name="deliveryZip" id="deliveryZip" required />
+              </label>
+            </div>
+            <div class="field-row">
+              <label>
+                <span>Delivery instructions</span>
+                <textarea name="deliveryInstructions" id="deliveryInstructions" rows="4"></textarea>
+              </label>
+            </div>
+          </div>
+
+          <div class="checkout-panel" data-step="2">
+            <h4>Order summary</h4>
+            <div id="checkoutSummary" class="summary-box"></div>
+          </div>
+
+          <div class="checkout-panel" data-step="3">
+            <h4>Payment</h4>
+            <p class="payment-note">This storefront is intentionally prepared for a future payment integration. A provider such as Stripe, PayPal, or a backend gateway can be connected without changing the UI structure.</p>
+            <div class="field-row two-col">
+              <label>
+                <span>Name on card</span>
+                <input type="text" name="cardName" id="cardName" placeholder="Demo checkout" />
+              </label>
+              <label>
+                <span>Card number</span>
+                <input type="text" name="cardNumber" id="cardNumber" placeholder="4242 4242 4242 4242" />
+              </label>
+            </div>
+            <div class="field-row two-col">
+              <label>
+                <span>Expiry</span>
+                <input type="text" name="cardExpiry" id="cardExpiry" placeholder="MM/YY" />
+              </label>
+              <label>
+                <span>CVC</span>
+                <input type="text" name="cardCvc" id="cardCvc" placeholder="123" />
+              </label>
+            </div>
+          </div>
+        </form>
+
+        <div class="checkout-actions">
+          <button type="button" class="btn btn-secondary" id="checkoutPrev">Back</button>
+          <button type="button" class="btn btn-primary" id="checkoutNext">Continue</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="confirmation-backdrop hidden" id="confirmationModal" aria-hidden="true">
+      <div class="confirmation-sheet" role="dialog" aria-modal="true" aria-labelledby="confirmationTitle">
+        <div class="confirmation-badge">✓</div>
+        <span class="eyebrow">Order confirmed</span>
+        <h3 id="confirmationTitle">Your order is on the way.</h3>
+        <div id="confirmationContent"></div>
+        <div class="progress-timeline" aria-label="Order progress timeline">
+          <div class="progress-item active"><span>Confirmed</span></div>
+          <div class="progress-item"><span>Preparing</span></div>
+          <div class="progress-item"><span>Out for delivery</span></div>
+          <div class="progress-item"><span>Delivered</span></div>
+        </div>
+        <button type="button" class="btn btn-primary" id="closeConfirmation">Back to menu</button>
+      </div>
+    </div>
+
+    <div class="toast" id="toast" aria-live="polite"></div>
+    <button class="mobile-order-cta" id="mobileCartButton" type="button">View cart</button>
+
     <script>
-        // Menu Data
-        const menuItems = [
-            { id: 1, name: "Margherita Pizza", category: "pizza", price: 12.99, image: "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&h=300&fit=crop", rating: 4.8, description: "Classic tomato sauce, mozzarella, fresh basil" },
-            { id: 2, name: "Pepperoni Pizza", category: "pizza", price: 14.99, image: "https://images.unsplash.com/photo-1628840042765-356cda07504e?w=400&h=300&fit=crop", rating: 4.9, description: "Spicy pepperoni, mozzarella, tomato sauce", popular: true },
-            { id: 3, name: "Classic Burger", category: "burger", price: 10.99, image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=300&fit=crop", rating: 4.7, description: "Beef patty, lettuce, tomato, cheese, special sauce" },
-            { id: 4, name: "Double Cheeseburger", category: "burger", price: 13.99, image: "https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=400&h=300&fit=crop", rating: 4.8, description: "Two beef patties, double cheese, bacon", popular: true },
-            { id: 5, name: "Spaghetti Carbonara", category: "pasta", price: 11.99, image: "https://images.unsplash.com/photo-1612874742237-6526221588e3?w=400&h=300&fit=crop", rating: 4.6, description: "Creamy egg sauce, pancetta, parmesan" },
-            { id: 6, name: "Fettuccine Alfredo", category: "pasta", price: 12.99, image: "https://images.unsplash.com/photo-1645112411341-6c4fd936714f?w=400&h=300&fit=crop", rating: 4.7, description: "Rich cream sauce, parmesan, garlic", popular: true },
-            { id: 7, name: "Caesar Salad", category: "salad", price: 8.99, image: "https://images.unsplash.com/photo-1550304943-4f24f54ddde9?w=400&h=300&fit=crop", rating: 4.5, description: "Romaine lettuce, croutons, parmesan, caesar dressing" },
-            { id: 8, name: "Greek Salad", category: "salad", price: 9.99, image: "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=400&h=300&fit=crop", rating: 4.6, description: "Cucumber, tomato, olives, feta cheese, olive oil" },
-            { id: 9, name: "Chocolate Lava Cake", category: "dessert", price: 6.99, image: "https://images.unsplash.com/photo-1624353365286-3f8d62daad51?w=400&h=300&fit=crop", rating: 4.9, description: "Warm chocolate cake with molten center", popular: true },
-            { id: 10, name: "Tiramisu", category: "dessert", price: 7.99, image: "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=400&h=300&fit=crop", rating: 4.8, description: "Italian coffee-flavored dessert" },
-            { id: 11, name: "Fresh Orange Juice", category: "drink", price: 4.99, image: "https://images.unsplash.com/photo-1613478223719-2ab802602423?w=400&h=300&fit=crop", rating: 4.7, description: "Freshly squeezed orange juice" },
-            { id: 12, name: "Iced Coffee", category: "drink", price: 3.99, image: "https://images.unsplash.com/photo-1517701604599-bb29b5dd7359?w=400&h=300&fit=crop", rating: 4.6, description: "Cold brew coffee with milk" }
-        ];
+      const businessConfig = {
+        deliveryFee: 3.99,
+        freeDeliveryThreshold: 30,
+        taxRate: 0.085,
+        promoCode: 'BAYI10',
+        themeKey: 'bayichilot-theme',
+        cartKey: 'bayichilot-cart',
+        promoKey: 'bayichilot-promo'
+      };
 
-        // Cart State
-        let cart = [];
+      const menuItems = [
+        { id: 1, name: 'Crispy Fire Pizza', category: 'pizza', price: 18.5, rating: 4.9, prepTime: 18, popular: true, image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=80', description: 'Wood-fired crust, San Marzano tomato sauce, basil, and a balanced mozzarella finish.', ingredients: ['San Marzano tomatoes', 'fresh mozzarella', 'basil', 'extra virgin olive oil'], tags: ['Vegetarian', 'Best seller'], addOns: [{ name: 'Extra cheese', price: 2.5 }, { name: 'Spicy drizzle', price: 1.5 }, { name: 'Add chicken', price: 4.0 }] },
+        { id: 2, name: 'Smoky BBQ Burger', category: 'burgers', price: 15.75, rating: 4.8, prepTime: 16, popular: true, image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80', description: 'Char-grilled beef, smoked cheddar, crisp lettuce, and tangy BBQ glaze on a toasted brioche bun.', ingredients: ['beef patty', 'smoked cheddar', 'lettuce', 'brioche bun', 'BBQ sauce'], tags: ['Popular', 'High protein'], addOns: [{ name: 'Double patty', price: 4.25 }, { name: 'Add bacon', price: 3.0 }, { name: 'Remove onions', price: 0 }] },
+        { id: 3, name: 'Truffle Linguine', category: 'pasta', price: 17.25, rating: 4.7, prepTime: 20, popular: false, image: 'https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?auto=format&fit=crop&w=900&q=80', description: 'Creamy parmesan sauce, garlic butter, and a generous truffle aroma with freshly shaved herbs.', ingredients: ['linguine', 'parmesan', 'garlic', 'truffle oil', 'herbs'], tags: ['Comfort'], addOns: [{ name: 'Add mushrooms', price: 2.5 }, { name: 'Extra parmesan', price: 1.25 }, { name: 'Spicy finish', price: 1.0 }] },
+        { id: 4, name: 'Garden Harvest Bowl', category: 'salads', price: 13.5, rating: 4.6, prepTime: 12, popular: false, image: 'https://images.unsplash.com/photo-1546793665-c74683f339c1?auto=format&fit=crop&w=900&q=80', description: 'Crisp greens, roasted vegetables, avocado, and a citrus vinaigrette for a lighter but still satisfying pick.', ingredients: ['mixed greens', 'avocado', 'quinoa', 'tomatoes', 'lemon vinaigrette'], tags: ['Light', 'Gluten-free option'], addOns: [{ name: 'Add grilled chicken', price: 4.5 }, { name: 'Add feta', price: 1.75 }, { name: 'Swap dressing', price: 0 }] },
+        { id: 5, name: 'Molten Lava Cake', category: 'desserts', price: 8.5, rating: 4.9, prepTime: 9, popular: true, image: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=900&q=80', description: 'Warm chocolate cake with a rich center, served with vanilla bean cream and sea salt.', ingredients: ['dark chocolate', 'butter', 'flour', 'vanilla cream'], tags: ['Sweet', 'Fan favorite'], addOns: [{ name: 'Ice cream side', price: 2.0 }, { name: 'Extra sauce', price: 1.0 }] },
+        { id: 6, name: 'Citrus Spritz', category: 'drinks', price: 4.5, rating: 4.7, prepTime: 5, popular: false, image: 'https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=900&q=80', description: 'A bright citrus blend of orange, lime, and mint with sparkling water for a crisp finish.', ingredients: ['orange', 'lime', 'mint', 'sparkling water'], tags: ['Refreshing'], addOns: [{ name: 'Add lemon slice', price: 0 }, { name: 'Extra mint', price: 0 }] },
+        { id: 7, name: 'Chicken Caesar Wrap', category: 'burgers', price: 14.25, rating: 4.6, prepTime: 15, popular: false, image: 'https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=900&q=80', description: 'Grilled chicken, crisp romaine, parmesan, and Caesar dressing wrapped in a soft tortilla.', ingredients: ['grilled chicken', 'romaine', 'parmesan', 'Caesar dressing'], tags: ['High protein'], addOns: [{ name: 'Add bacon', price: 2.5 }, { name: 'Swap tortilla', price: 0 }] },
+        { id: 8, name: 'Sunrise Breakfast Pasta', category: 'pasta', price: 16.25, rating: 4.7, prepTime: 17, popular: false, image: 'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=900&q=80', description: 'A savory comfort pasta with roasted tomatoes, herbs, and soft cheese for a warm, rich bite.', ingredients: ['roasted tomatoes', 'fresh herbs', 'soft cheese', 'pasta'], tags: ['Comfort'], addOns: [{ name: 'Add spinach', price: 1.5 }, { name: 'Extra herbs', price: 0.5 }] },
+        { id: 9, name: 'Berry Cheesecake Cup', category: 'desserts', price: 7.5, rating: 4.8, prepTime: 7, popular: false, image: 'https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=900&q=80', description: 'Silky cheesecake layered with berry compote and a crisp cookie crumble finish.', ingredients: ['cream cheese', 'berries', 'cookie crumb', 'vanilla'], tags: ['Refreshing'], addOns: [{ name: 'Add chocolate drizzle', price: 1.25 }] },
+        { id: 10, name: 'Cucumber Cooler', category: 'drinks', price: 4.0, rating: 4.5, prepTime: 4, popular: false, image: 'https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=900&q=80', description: 'Light, hydrating, and crisp with cucumber, lime, and a hint of mint.', ingredients: ['cucumber', 'lime', 'mint', 'sparkling water'], tags: ['Hydrating'], addOns: [{ name: 'Lime extra', price: 0 }] }
+      ];
 
-        // DOM Elements
-        const menuGrid = document.getElementById('menuGrid');
-        const cartBtn = document.getElementById('cartBtn');
-        const cartSidebar = document.getElementById('cartSidebar');
-        const cartOverlay = document.getElementById('cartOverlay');
-        const cartClose = document.getElementById('cartClose');
-        const cartItems = document.getElementById('cartItems');
-        const cartCount = document.getElementById('cartCount');
-        const cartTotal = document.getElementById('cartTotal');
-        const cartFooter = document.getElementById('cartFooter');
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.getElementById('navLinks');
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const toast = document.getElementById('toast');
+      const state = {
+        cart: loadCart(),
+        activeCategory: 'all',
+        activeSearch: '',
+        sortBy: 'featured',
+        promoDiscount: 0,
+        checkoutStep: 0,
+        modalItemId: null,
+        modalQuantity: 1,
+        modalInstructions: ''
+      };
 
-        // Render Menu
-        function renderMenu(category = 'all') {
-            const filtered = category === 'all' ? menuItems : menuItems.filter(item => item.category === category);
-            
-            menuGrid.innerHTML = filtered.map(item => `
-                <div class="menu-card" data-category="${item.category}">
-                    ${item.popular ? '<span class="menu-badge">Popular</span>' : ''}
-                    <div class="menu-image">
-                        <img src="${item.image}" alt="${item.name}" loading="lazy">
-                    </div>
-                    <div class="menu-info">
-                        <div class="menu-header">
-                            <h3>${item.name}</h3>
-                            <span class="menu-rating">★ ${item.rating}</span>
-                        </div>
-                        <p class="menu-description">${item.description}</p>
-                        <div class="menu-footer">
-                            <span class="menu-price">${item.price.toFixed(2)}</span>
-                            <button class="add-to-cart" onclick="addToCart(${item.id})">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                                Add
-                            </button>
-                        </div>
-                    </div>
+      const refs = {
+        menuGrid: document.getElementById('menuGrid'),
+        menuSearch: document.getElementById('menuSearch'),
+        searchClear: document.getElementById('searchClear'),
+        sortSelect: document.getElementById('sortSelect'),
+        categoryTabs: document.getElementById('categoryTabs'),
+        searchSuggestions: document.getElementById('searchSuggestions'),
+        cartButton: document.getElementById('cartButton'),
+        cartDrawer: document.getElementById('cartDrawer'),
+        drawerOverlay: document.getElementById('drawerOverlay'),
+        cartClose: document.getElementById('cartClose'),
+        cartItems: document.getElementById('cartItems'),
+        subtotalValue: document.getElementById('subtotalValue'),
+        deliveryValue: document.getElementById('deliveryValue'),
+        taxValue: document.getElementById('taxValue'),
+        discountValue: document.getElementById('discountValue'),
+        totalValue: document.getElementById('totalValue'),
+        checkoutButton: document.getElementById('checkoutButton'),
+        clearCart: document.getElementById('clearCart'),
+        promoInput: document.getElementById('promoInput'),
+        applyPromo: document.getElementById('applyPromo'),
+        toast: document.getElementById('toast'),
+        modal: document.getElementById('foodModal'),
+        modalContent: document.getElementById('modalContent'),
+        modalClose: document.getElementById('modalClose'),
+        checkoutModal: document.getElementById('checkoutModal'),
+        checkoutClose: document.getElementById('checkoutClose'),
+        checkoutPrev: document.getElementById('checkoutPrev'),
+        checkoutNext: document.getElementById('checkoutNext'),
+        checkoutSummary: document.getElementById('checkoutSummary'),
+        confirmationModal: document.getElementById('confirmationModal'),
+        confirmationContent: document.getElementById('confirmationContent'),
+        closeConfirmation: document.getElementById('closeConfirmation'),
+        contactForm: document.getElementById('contactForm'),
+        contactStatus: document.getElementById('contactStatus'),
+        themeToggle: document.getElementById('themeToggle'),
+        mobileNavToggle: document.getElementById('mobileNavToggle'),
+        mobileMenu: document.getElementById('mobileMenu'),
+        mobileCartButton: document.getElementById('mobileCartButton'),
+        searchToggle: document.getElementById('searchToggle'),
+        newsletterForm: document.getElementById('newsletterForm'),
+        copyPromoCode: document.getElementById('copyPromoCode')
+      };
+
+      function saveCart() { localStorage.setItem(businessConfig.cartKey, JSON.stringify(state.cart)); }
+      function loadCart() { try { return JSON.parse(localStorage.getItem(businessConfig.cartKey)) || []; } catch { return []; } }
+
+      function showToast(message) {
+        refs.toast.textContent = message;
+        refs.toast.classList.add('visible');
+        clearTimeout(showToast.timer);
+        showToast.timer = setTimeout(() => refs.toast.classList.remove('visible'), 2600);
+      }
+
+      function getCartCount() { return state.cart.reduce((sum, item) => sum + item.quantity, 0); }
+
+      function getCartTotals() {
+        const subtotal = state.cart.reduce((sum, item) => {
+          const addOnTotal = (item.addOns || []).reduce((t, addOn) => t + Number(addOn.price || 0), 0);
+          return sum + (item.price + addOnTotal) * item.quantity;
+        }, 0);
+
+        const delivery = subtotal >= businessConfig.freeDeliveryThreshold ? 0 : businessConfig.deliveryFee;
+        const tax = subtotal * businessConfig.taxRate;
+        const discount = state.promoDiscount;
+        const total = subtotal + delivery + tax - discount;
+
+        return { subtotal, delivery, tax, discount, total };
+      }
+
+      function updateCartBadge() {
+        refs.cartButton.setAttribute('aria-label', `Open cart with ${getCartCount()} items`);
+        const badge = document.getElementById('cartBadge');
+        badge.textContent = getCartCount();
+      }
+
+      function updateCartDrawer() {
+        updateCartBadge();
+
+        if (!state.cart.length) {
+          refs.cartItems.innerHTML = `
+            <div class="empty-cart">
+              <span class="empty-illustration">🛒</span>
+              <h4>Your cart is waiting for something delicious.</h4>
+              <p>Browse the menu and add a few favorites.</p>
+              <button type="button" class="btn btn-primary" data-close-cart="true">Browse menu</button>
+            </div>
+          `;
+          refs.cartItems.querySelector('[data-close-cart]')?.addEventListener('click', () => closeCart());
+        } else {
+          refs.cartItems.innerHTML = state.cart.map((item) => {
+            const addOnTotal = (item.addOns || []).reduce((sum, addOn) => sum + Number(addOn.price || 0), 0);
+            const options = (item.addOns || []).map((option) => option.name).join(', ');
+            return `
+              <article class="cart-item">
+                <img src="${item.image}" alt="${item.name}" />
+                <div class="cart-item-copy">
+                  <div class="cart-item-header">
+                    <h4>${item.name}</h4>
+                    <button type="button" class="remove-item" data-remove-id="${item.id}" aria-label="Remove ${item.name}">×</button>
+                  </div>
+                  <p>${item.quantity} x $${(item.price + addOnTotal).toFixed(2)}</p>
+                  <div class="cart-item-meta">
+                    <span>${options || 'No customizations'}</span>
+                  </div>
+                  <div class="quantity-controls">
+                    <button type="button" data-qty-action="decrease" data-item-id="${item.id}" aria-label="Decrease quantity for ${item.name}">−</button>
+                    <span>${item.quantity}</span>
+                    <button type="button" data-qty-action="increase" data-item-id="${item.id}" aria-label="Increase quantity for ${item.name}">+</button>
+                  </div>
                 </div>
-            `).join('');
+              </article>
+            `;
+          }).join('');
+
+          refs.cartItems.querySelectorAll('[data-remove-id]').forEach((button) => {
+            button.addEventListener('click', () => removeFromCart(button.dataset.removeId));
+          });
+
+          refs.cartItems.querySelectorAll('[data-qty-action]').forEach((button) => {
+            button.addEventListener('click', () => {
+              const itemId = Number(button.dataset.itemId);
+              changeQty(itemId, button.dataset.qtyAction === 'increase' ? 1 : -1);
+            });
+          });
         }
 
-        // Add to Cart
-        function addToCart(id) {
-            const item = menuItems.find(i => i.id === id);
-            const existing = cart.find(i => i.id === id);
-            
-            if (existing) {
-                existing.quantity++;
-            } else {
-                cart.push({ ...item, quantity: 1 });
+        const totals = getCartTotals();
+        refs.subtotalValue.textContent = `$${totals.subtotal.toFixed(2)}`;
+        refs.deliveryValue.textContent = `$${totals.delivery.toFixed(2)}`;
+        refs.taxValue.textContent = `$${totals.tax.toFixed(2)}`;
+        refs.discountValue.textContent = `-$${totals.discount.toFixed(2)}`;
+        refs.totalValue.textContent = `$${totals.total.toFixed(2)}`;
+      }
+
+      function addToCart(itemId, customizations = [], note = '') {
+        const item = menuItems.find((entry) => entry.id === Number(itemId));
+        if (!item) return;
+
+        const existing = state.cart.find((cartItem) => cartItem.id === Number(itemId));
+
+        if (existing) {
+          existing.quantity += 1;
+          if (customizations.length) {
+            existing.addOns = [...(existing.addOns || []), ...customizations];
+          }
+          if (note) existing.instructions = note;
+        } else {
+          state.cart.push({
+            id: item.id,
+            name: item.name,
+            image: item.image,
+            price: item.price,
+            quantity: 1,
+            addOns: [...customizations],
+            instructions: note
+          });
+        }
+
+        saveCart();
+        updateCartDrawer();
+        showToast(`${item.name} added to cart`);
+      }
+
+      function removeFromCart(itemId) {
+        state.cart = state.cart.filter((item) => item.id !== Number(itemId));
+        saveCart();
+        updateCartDrawer();
+        showToast('Item removed from cart');
+      }
+
+      function changeQty(itemId, delta) {
+        const item = state.cart.find((entry) => entry.id === Number(itemId));
+        if (!item) return;
+        item.quantity += delta;
+
+        if (item.quantity <= 0) {
+          state.cart = state.cart.filter((entry) => entry.id !== Number(itemId));
+        }
+
+        saveCart();
+        updateCartDrawer();
+      }
+
+      function clearCart() {
+        state.cart = [];
+        state.promoDiscount = 0;
+        refs.promoInput.value = '';
+        saveCart();
+        updateCartDrawer();
+        showToast('Cart cleared');
+      }
+
+      function openCart() {
+        refs.cartDrawer.classList.add('open');
+        refs.drawerOverlay.classList.add('visible');
+        refs.cartDrawer.setAttribute('aria-hidden', 'false');
+      }
+
+      function closeCart() {
+        refs.cartDrawer.classList.remove('open');
+        refs.drawerOverlay.classList.remove('visible');
+        refs.cartDrawer.setAttribute('aria-hidden', 'true');
+      }
+
+      function applyPromoCode() {
+        const code = refs.promoInput.value.trim().toUpperCase();
+        const subtotal = getCartTotals().subtotal;
+
+        if (!code) {
+          showToast('Enter a promo code');
+          return;
+        }
+
+        if (code === businessConfig.promoCode) {
+          state.promoDiscount = subtotal * 0.1;
+          localStorage.setItem(businessConfig.promoKey, code);
+          updateCartDrawer();
+          showToast('Promo code applied');
+        } else {
+          state.promoDiscount = 0;
+          localStorage.removeItem(businessConfig.promoKey);
+          updateCartDrawer();
+          showToast('Promo code not valid');
+        }
+      }
+
+      function buildMenuCard(item) {
+        return `
+          <article class="menu-card" data-item-id="${item.id}">
+            <button type="button" class="card-image-button" data-open-item="${item.id}" aria-label="View ${item.name}">
+              <img src="${item.image}" alt="${item.name}" loading="lazy" />
+            </button>
+            ${item.popular ? '<span class="trend-tag">Popular</span>' : ''}
+            <div class="menu-card-body">
+              <div class="menu-header-row">
+                <h3>${item.name}</h3>
+                <span class="rating-pill small">★ ${item.rating}</span>
+              </div>
+              <p>${item.description}</p>
+              <div class="chip-row">
+                ${item.tags.map((tag) => `<span class="chip">${tag}</span>`).join('')}
+              </div>
+              <div class="menu-footer-row">
+                <div>
+                  <span class="menu-price">$${item.price.toFixed(2)}</span>
+                  <span class="prep-time">${item.prepTime} min</span>
+                </div>
+                <button type="button" class="btn btn-primary add-item" data-add-item="${item.id}">Add</button>
+              </div>
+            </div>
+          </article>
+        `;
+      }
+
+      function renderMenu() {
+        const query = state.activeSearch.trim().toLowerCase();
+        const filtered = menuItems.filter((item) => {
+          const matchesCategory = state.activeCategory === 'all'
+            ? true
+            : state.activeCategory === 'popular'
+              ? item.popular
+              : item.category === state.activeCategory;
+
+          const haystack = `${item.name} ${item.description} ${item.ingredients.join(' ')} ${item.category}`.toLowerCase();
+          const matchesQuery = !query || haystack.includes(query);
+          return matchesCategory && matchesQuery;
+        });
+
+        const sorted = [...filtered].sort((a, b) => {
+          if (state.sortBy === 'rating') return b.rating - a.rating;
+          if (state.sortBy === 'price-low') return a.price - b.price;
+          if (state.sortBy === 'price-high') return b.price - a.price;
+          if (state.sortBy === 'prep') return a.prepTime - b.prepTime;
+          return Number(b.popular) - Number(a.popular) || b.rating - a.rating;
+        });
+
+        if (!sorted.length) {
+          refs.menuGrid.innerHTML = `
+            <div class="empty-state large-empty">
+              <span class="empty-illustration">🔎</span>
+              <h3>We couldn’t find that dish.</h3>
+              <p>Try a different search term or explore the popular picks.</p>
+              <button type="button" class="btn btn-primary" id="resetSearch">Explore popular dishes</button>
+            </div>
+          `;
+          document.getElementById('resetSearch')?.addEventListener('click', () => {
+            state.activeSearch = '';
+            refs.menuSearch.value = '';
+            refs.searchClear.classList.add('hidden');
+            renderMenu();
+          });
+          return;
+        }
+
+        refs.menuGrid.innerHTML = sorted.map(buildMenuCard).join('');
+
+        refs.menuGrid.querySelectorAll('[data-add-item]').forEach((button) => {
+          button.addEventListener('click', () => addToCart(Number(button.dataset.addItem)));
+        });
+
+        refs.menuGrid.querySelectorAll('[data-open-item]').forEach((button) => {
+          button.addEventListener('click', () => openProductModal(Number(button.dataset.openItem)));
+        });
+
+        refs.searchSuggestions.innerHTML = ['Pizza', 'Burger', 'Pasta', 'Salad', 'Dessert', 'Drinks']
+          .filter((suggestion) => !state.activeSearch || suggestion.toLowerCase().includes(state.activeSearch.toLowerCase()))
+          .slice(0, 6)
+          .map((suggestion) => `<button type="button" class="suggestion-chip" data-suggestion="${suggestion}">${suggestion}</button>`)
+          .join('');
+
+        refs.searchSuggestions.querySelectorAll('[data-suggestion]').forEach((button) => {
+          button.addEventListener('click', () => {
+            refs.menuSearch.value = button.dataset.suggestion;
+            state.activeSearch = button.dataset.suggestion;
+            refs.searchClear.classList.remove('hidden');
+            renderMenu();
+          });
+        });
+      }
+
+      function getSelectedOptions(item) {
+        const inputs = refs.modalContent.querySelectorAll('[data-option-index]');
+        return item.addOns.filter((_, index) => inputs[index].checked);
+      }
+
+      function updateModalTotal(item, selected = [], quantity = state.modalQuantity) {
+        const basePrice = item.price + selected.reduce((sum, option) => sum + Number(option.price || 0), 0);
+        document.getElementById('modalTotal').textContent = (basePrice * quantity).toFixed(2);
+      }
+
+      function openProductModal(itemId) {
+        const item = menuItems.find((entry) => entry.id === Number(itemId));
+        if (!item) return;
+
+        state.modalItemId = item.id;
+        state.modalQuantity = 1;
+        state.modalInstructions = '';
+
+        refs.modalContent.innerHTML = `
+          <div class="modal-media">
+            <img src="${item.image}" alt="${item.name}" />
+          </div>
+          <div class="modal-copy">
+            <div class="modal-meta-row">
+              <span class="eyebrow">${item.category}</span>
+              <span class="rating-pill">★ ${item.rating}</span>
+            </div>
+            <h3 id="productModalTitle">${item.name}</h3>
+            <p class="modal-description">${item.description}</p>
+            <div class="modal-price-row">
+              <strong>$${item.price.toFixed(2)}</strong>
+              <span>Prep time: ${item.prepTime} min</span>
+            </div>
+
+            <div class="modal-section">
+              <h4>Ingredients</h4>
+              <div class="chip-row">
+                ${item.ingredients.map((ingredient) => `<span class="chip">${ingredient}</span>`).join('')}
+              </div>
+            </div>
+
+            <div class="modal-section">
+              <h4>Customize</h4>
+              <div class="options-list">
+                ${item.addOns.map((option, index) => `
+                  <label class="option-item">
+                    <input type="checkbox" data-option-index="${index}" />
+                    <span>${option.name}</span>
+                    <strong>${option.price > 0 ? `+$${option.price.toFixed(2)}` : 'Included'}</strong>
+                  </label>
+                `).join('')}
+              </div>
+            </div>
+
+            <div class="modal-section">
+              <h4>Special instructions</h4>
+              <textarea id="modalInstructions" rows="3" placeholder="No onions, extra sauce, etc."></textarea>
+            </div>
+
+            <div class="modal-actions">
+              <div class="quantity-selector">
+                <button type="button" id="modalDecrease">−</button>
+                <span id="modalQty">1</span>
+                <button type="button" id="modalIncrease">+</button>
+              </div>
+              <button type="button" id="confirmAddToCart" class="btn btn-primary">Add to cart • $<span id="modalTotal">${item.price.toFixed(2)}</span></button>
+            </div>
+          </div>
+        `;
+
+        refs.modal.classList.remove('hidden');
+        refs.modal.setAttribute('aria-hidden', 'false');
+
+        const optionInputs = refs.modalContent.querySelectorAll('[data-option-index]');
+        optionInputs.forEach((input) => {
+          input.addEventListener('change', () => {
+            const selected = getSelectedOptions(item);
+            updateModalTotal(item, selected, Number(document.getElementById('modalQty').textContent));
+          });
+        });
+
+        document.getElementById('modalDecrease').addEventListener('click', () => {
+          state.modalQuantity = Math.max(1, state.modalQuantity - 1);
+          document.getElementById('modalQty').textContent = state.modalQuantity;
+          updateModalTotal(item, getSelectedOptions(item), state.modalQuantity);
+        });
+
+        document.getElementById('modalIncrease').addEventListener('click', () => {
+          state.modalQuantity += 1;
+          document.getElementById('modalQty').textContent = state.modalQuantity;
+          updateModalTotal(item, getSelectedOptions(item), state.modalQuantity);
+        });
+
+        document.getElementById('modalInstructions').addEventListener('input', (event) => {
+          state.modalInstructions = event.target.value;
+        });
+
+        document.getElementById('confirmAddToCart').addEventListener('click', () => {
+          const selected = getSelectedOptions(item);
+          addToCart(item.id, selected, state.modalInstructions);
+          closeProductModal();
+        });
+
+        updateModalTotal(item, [], 1);
+      }
+
+      function closeProductModal() {
+        refs.modal.classList.add('hidden');
+        refs.modal.setAttribute('aria-hidden', 'true');
+      }
+
+      function openCheckout() {
+        if (!state.cart.length) {
+          showToast('Your cart is empty');
+          return;
+        }
+        renderCheckoutSummary();
+        refs.checkoutModal.classList.remove('hidden');
+        refs.checkoutModal.setAttribute('aria-hidden', 'false');
+        refs.checkoutNext.textContent = state.checkoutStep === 3 ? 'Place order' : 'Continue';
+      }
+
+      function closeCheckout() {
+        refs.checkoutModal.classList.add('hidden');
+        refs.checkoutModal.setAttribute('aria-hidden', 'true');
+      }
+
+      function renderCheckoutSummary() {
+        const totals = getCartTotals();
+        refs.checkoutSummary.innerHTML = `
+          <div class="summary-line"><span>Items</span><strong>${getCartCount()}</strong></div>
+          <div class="summary-line"><span>Subtotal</span><strong>$${totals.subtotal.toFixed(2)}</strong></div>
+          <div class="summary-line"><span>Delivery</span><strong>$${totals.delivery.toFixed(2)}</strong></div>
+          <div class="summary-line"><span>Tax</span><strong>$${totals.tax.toFixed(2)}</strong></div>
+          <div class="summary-line total"><span>Total</span><strong>$${totals.total.toFixed(2)}</strong></div>
+        `;
+      }
+
+      function validateStep(stepIndex) {
+        const panel = document.querySelector(`.checkout-panel[data-step="${stepIndex}"]`);
+        const requiredFields = panel.querySelectorAll('input[required], textarea[required]');
+
+        for (const field of requiredFields) {
+          if (!field.value.trim()) {
+            field.reportValidity();
+            return false;
+          }
+        }
+
+        return true;
+      }
+
+      function showCheckoutStep(nextStep) {
+        state.checkoutStep = nextStep;
+        const panels = document.querySelectorAll('.checkout-panel');
+        const steps = document.querySelectorAll('.step');
+
+        panels.forEach((panel) => {
+          panel.classList.toggle('active', Number(panel.dataset.step) === nextStep);
+        });
+
+        steps.forEach((step, index) => {
+          step.classList.toggle('active', index === nextStep);
+          step.classList.toggle('completed', index < nextStep);
+        });
+
+        refs.checkoutPrev.style.visibility = nextStep === 0 ? 'hidden' : 'visible';
+        refs.checkoutNext.textContent = nextStep === 3 ? 'Place order' : 'Continue';
+      }
+
+      function placeOrder() {
+        const orderNumber = `BAYI-${Date.now().toString().slice(-6)}`;
+        const totals = getCartTotals();
+        const form = document.getElementById('checkoutForm');
+
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+
+        refs.confirmationContent.innerHTML = `
+          <div class="confirmation-summary">
+            <div><span>Order number</span><strong>${orderNumber}</strong></div>
+            <div><span>Delivery</span><strong>${document.getElementById('deliveryAddress').value}, ${document.getElementById('deliveryCity').value}</strong></div>
+            <div><span>ETA</span><strong>25–35 min</strong></div>
+            <div><span>Total</span><strong>$${totals.total.toFixed(2)}</strong></div>
+          </div>
+          <div class="confirmation-items">
+            ${state.cart.map((item) => `
+              <div class="confirmation-item">
+                <span>${item.name} x ${item.quantity}</span>
+                <strong>$${((item.price + (item.addOns || []).reduce((sum, addOn) => sum + Number(addOn.price || 0), 0)) * item.quantity).toFixed(2)}</strong>
+              </div>
+            `).join('')}
+          </div>
+        `;
+
+        closeCheckout();
+        state.cart = [];
+        state.promoDiscount = 0;
+        saveCart();
+        updateCartDrawer();
+        refs.confirmationModal.classList.remove('hidden');
+        refs.confirmationModal.setAttribute('aria-hidden', 'false');
+      }
+
+      function bindEvents() {
+        refs.cartButton.addEventListener('click', openCart);
+        refs.mobileCartButton.addEventListener('click', openCart);
+        refs.cartClose.addEventListener('click', closeCart);
+        refs.drawerOverlay.addEventListener('click', closeCart);
+        refs.checkoutButton.addEventListener('click', openCheckout);
+        refs.checkoutClose.addEventListener('click', closeCheckout);
+        refs.clearCart.addEventListener('click', clearCart);
+        refs.applyPromo.addEventListener('click', applyPromoCode);
+        refs.copyPromoCode.addEventListener('click', () => {
+          navigator.clipboard?.writeText('BAYI10').then(() => showToast('Promo code copied')).catch(() => showToast('Promo code: BAYI10'));
+        });
+
+        refs.menuSearch.addEventListener('input', (event) => {
+          state.activeSearch = event.target.value;
+          refs.searchClear.classList.toggle('hidden', !event.target.value);
+          renderMenu();
+        });
+
+        refs.searchClear.addEventListener('click', () => {
+          refs.menuSearch.value = '';
+          state.activeSearch = '';
+          refs.searchClear.classList.add('hidden');
+          renderMenu();
+        });
+
+        refs.sortSelect.addEventListener('change', (event) => {
+          state.sortBy = event.target.value;
+          renderMenu();
+        });
+
+        refs.categoryTabs.addEventListener('click', (event) => {
+          const button = event.target.closest('.filter-button');
+          if (!button) return;
+          document.querySelectorAll('.filter-button').forEach((btn) => btn.classList.toggle('active', btn === button));
+          state.activeCategory = button.dataset.category;
+          renderMenu();
+        });
+
+        refs.modalClose.addEventListener('click', closeProductModal);
+        refs.modal.addEventListener('click', (event) => {
+          if (event.target === refs.modal) closeProductModal();
+        });
+
+        refs.checkoutNext.addEventListener('click', () => {
+          if (state.checkoutStep < 3) {
+            if (validateStep(state.checkoutStep)) {
+              showCheckoutStep(state.checkoutStep + 1);
             }
-            
-            updateCart();
-            showToast(`${item.name} added to cart!`);
-        }
+          } else {
+            placeOrder();
+          }
+        });
 
-        // Remove from Cart
-        function removeFromCart(id) {
-            cart = cart.filter(item => item.id !== id);
-            updateCart();
-        }
+        refs.checkoutPrev.addEventListener('click', () => {
+          if (state.checkoutStep > 0) showCheckoutStep(state.checkoutStep - 1);
+        });
 
-        // Update Quantity
-        function updateQuantity(id, change) {
-            const item = cart.find(i => i.id === id);
-            if (item) {
-                item.quantity += change;
-                if (item.quantity <= 0) {
-                    removeFromCart(id);
-                } else {
-                    updateCart();
-                }
-            }
-        }
+        refs.closeConfirmation.addEventListener('click', () => {
+          refs.confirmationModal.classList.add('hidden');
+          refs.confirmationModal.setAttribute('aria-hidden', 'true');
+          document.documentElement.scrollTop = 0;
+        });
 
-        // Update Cart UI
-        function updateCart() {
-            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-            
-            cartCount.textContent = totalItems;
-            cartTotal.textContent = `${totalPrice.toFixed(2)}`;
-            
-            if (cart.length === 0) {
-                cartItems.innerHTML = `
-                    <div class="cart-empty">
-                        <span class="empty-icon">🛒</span>
-                        <p>Your cart is empty</p>
-                        <a href="#menu" class="btn btn-primary" onclick="closeCart()">Browse Menu</a>
-                    </div>
-                `;
-                cartFooter.style.display = 'none';
-            } else {
-                cartItems.innerHTML = cart.map(item => `
-                    <div class="cart-item">
-                        <img src="${item.image}" alt="${item.name}" class="cart-item-img">
-                        <div class="cart-item-info">
-                            <h4>${item.name}</h4>
-                            <p>${item.price.toFixed(2)}</p>
-                        </div>
-                        <div class="cart-item-controls">
-                            <button onclick="updateQuantity(${item.id}, -1)">−</button>
-                            <span>${item.quantity}</span>
-                            <button onclick="updateQuantity(${item.id}, 1)">+</button>
-                        </div>
-                        <button class="cart-item-remove" onclick="removeFromCart(${item.id})">✕</button>
-                    </div>
-                `).join('');
-                cartFooter.style.display = 'block';
-            }
-        }
+        refs.mobileNavToggle.addEventListener('click', () => {
+          const isOpen = refs.mobileMenu.classList.toggle('open');
+          refs.mobileNavToggle.setAttribute('aria-expanded', String(isOpen));
+        });
 
-        // Cart Sidebar Toggle
-        function openCart() {
-            cartSidebar.classList.add('open');
-            cartOverlay.classList.add('show');
-            document.body.style.overflow = 'hidden';
-        }
+        refs.searchToggle.addEventListener('click', () => {
+          refs.menuSearch.focus();
+          refs.menuSearch.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
 
-        function closeCart() {
-            cartSidebar.classList.remove('open');
-            cartOverlay.classList.remove('show');
-            document.body.style.overflow = '';
-        }
+        refs.contactForm.addEventListener('submit', (event) => {
+          event.preventDefault();
+          const form = event.currentTarget;
+          if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+          }
 
-        // Checkout
-        function checkout() {
-            if (cart.length === 0) return;
-            showToast('Order placed successfully! Thank you for choosing Bayichilot!');
-            cart = [];
-            updateCart();
+          const submitButton = form.querySelector('button[type="submit"]');
+          submitButton.disabled = true;
+          submitButton.textContent = 'Sending...';
+
+          setTimeout(() => {
+            refs.contactStatus.textContent = 'Thanks for reaching out — we will get back to you soon.';
+            form.reset();
+            submitButton.disabled = false;
+            submitButton.textContent = 'Send message';
+          }, 1000);
+        });
+
+        refs.newsletterForm.addEventListener('submit', (event) => {
+          event.preventDefault();
+          const input = document.getElementById('newsletterEmail');
+          if (!input.value.trim()) {
+            input.reportValidity();
+            return;
+          }
+          showToast('Thanks for signing up');
+          refs.newsletterForm.reset();
+        });
+
+        refs.themeToggle.addEventListener('click', () => {
+          const root = document.documentElement;
+          const nextTheme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+          root.dataset.theme = nextTheme;
+          localStorage.setItem(businessConfig.themeKey, nextTheme);
+        });
+
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape') {
             closeCart();
-        }
-
-        // Toast Notification
-        function showToast(message) {
-            toast.textContent = message;
-            toast.classList.add('show');
-            setTimeout(() => toast.classList.remove('show'), 3000);
-        }
-
-        // Event Listeners
-        cartBtn.addEventListener('click', openCart);
-        cartClose.addEventListener('click', closeCart);
-        cartOverlay.addEventListener('click', closeCart);
-
-        // Mobile Menu
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('show');
+            closeProductModal();
+            closeCheckout();
+            refs.confirmationModal.classList.add('hidden');
+          }
         });
 
-        // Filter Buttons
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                renderMenu(btn.dataset.filter);
-            });
-        });
-
-        // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    navLinks.classList.remove('show');
-                }
-            });
-        });
-
-        // Navbar Scroll Effect
-        window.addEventListener('scroll', () => {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
+        document.querySelectorAll('a[href^="#"]').forEach((link) => {
+          link.addEventListener('click', (event) => {
+            const targetId = link.getAttribute('href');
+            if (targetId && targetId !== '#') {
+              const section = document.querySelector(targetId);
+              if (section) {
+                event.preventDefault();
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                refs.mobileMenu.classList.remove('open');
+                refs.mobileNavToggle.setAttribute('aria-expanded', 'false');
+              }
             }
+          });
         });
+      }
 
-        // Contact Form
-        document.getElementById('contactForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            showToast('Message sent successfully! We will get back to you soon.');
-            e.target.reset();
-        });
+      function initTheme() {
+        const savedTheme = localStorage.getItem(businessConfig.themeKey);
+        if (savedTheme === 'dark') {
+          document.documentElement.dataset.theme = 'dark';
+        }
+      }
 
-        // Initialize
+      function init() {
+        initTheme();
         renderMenu();
+        updateCartDrawer();
+        showCheckoutStep(0);
+        bindEvents();
+
+        const savedPromo = localStorage.getItem(businessConfig.promoKey);
+        if (savedPromo) {
+          refs.promoInput.value = savedPromo;
+          state.promoDiscount = getCartTotals().subtotal * 0.1;
+        }
+      }
+
+      init();
     </script>
-</body>
+  </body>
 </html>
